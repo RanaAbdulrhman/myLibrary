@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 nav{
     height: 10vh;
@@ -27,6 +28,7 @@ h1:hover{
 .container{
     background-color: var(--grey);
     min-height: 85vh;
+
 }
 
 .floating-btn{
@@ -46,14 +48,14 @@ h1:hover{
 }
 footer{
     color: var(--white);
-    height: 4vh;
+    height: 5vh;
     background-color: var(--dark-color);
     text-align: center;
     padding-top: 1vh;
 }
 .books-grid{
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
     grid-template-rows: auto;
     gap: 50px;
     padding: 50px;
@@ -209,7 +211,7 @@ h2{
     border: 0;
     margin-bottom: 0.8rem;
     height: 1rem;
-    padding: 10px;
+    padding: 15px;
 }
 .adding-btn{
     margin-top: 2rem;
