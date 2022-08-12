@@ -1,1 +1,47 @@
+<!-- Library for your books,     -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <title>Personal Library</title>
+</head>
+<body>
+    <nav>
+        <h1>Library</h1>
+    </nav>
+    <div class="container">
+        <div class="books-grid"></div>
+        <div class="floating-btn"> 
+            + 
+        </div>
+        <div class="modal">
+            <form class="book-form" onsubmit="return false;">
+                <h2>Add new book</h2>
+                    <label for="book-title">Title</label>
+                    <input name="title" type="text" class="book-input" id="book-title" required>
 
+                    <label for="book-author">Author</label>
+                    <input name="author" type="text" class="book-input" id="book-author" required>
+
+                    <div class="read-input-group">
+                        <input name="isRead" type="checkbox" id="isRead" >
+                        <label for="isRead">Have you read it?</label>
+                    </div>
+                <button class="adding-btn">Add</button>
+            </form>
+        </div>
+    </div>  
+    <div class="overlay"></div>
+    <footer>Copyright © 2022 RanaAbdulrhman</footer>
+
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="functions.js"></script>
+</body>
+</html>

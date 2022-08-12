@@ -1,1 +1,229 @@
+:root{
+    --dark-color: rgb(18,20,32);
+    --light-color: rgb(87,127,232);
+    --white: rgb(253,253,253);
+    --grey: rgb(249, 249, 249);
 
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    height: 10vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+}
+h1 {
+    color: var(--dark-color);
+    font-size: 35px;
+}
+h1:hover{
+    color: var(--light-color);
+}
+.container{
+    background-color: var(--grey);
+    min-height: 85vh;
+}
+
+.floating-btn{
+    background-color: var(--light-color);
+    color: var(--white);
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    position: fixed;
+    left: 93%;
+    top: 85%;
+    cursor: pointer;
+}
+footer{
+    color: var(--white);
+    height: 4vh;
+    background-color: var(--dark-color);
+    text-align: center;
+    padding-top: 1vh;
+}
+.books-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    gap: 50px;
+    padding: 50px;
+}
+.books-grid:empty::after{
+    content: "NO BOOKS YET";
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -15px;
+    margin-left: -30px;
+    text-align: center;
+    color: rgb(0, 0, 0,0.2);
+    z-index: 5;
+    font-size: 2rem;
+}
+.card{
+    width: 100%;
+    display: flex;
+    background-color: var(--white);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.book-img{
+    float: left;
+    width:  80px;
+    height: auto;
+    object-fit: cover;
+    flex: 1;
+    margin: 20px;
+}
+.line{
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: var(--light-color);
+    border-radius: 10px;
+
+}
+.remove-btn{
+    position: relative;
+    top: 5px;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 145, 145, 0.7);
+    color: rgb(154, 3, 3);
+    cursor: pointer;
+}
+.remove-btn::after{
+    content: "x" ;
+}
+.book-info{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    margin: 10% 0;
+    color: var(--dark-color);
+    font-size: minmax(1vh,3vh);
+}
+.read-tag{
+    width: 5rem;
+    font-size: 0.7rem;
+    text-align: center;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+.read{
+    background-color: rgb(145, 255, 178,0.7);
+    color: rgb(3, 154, 51);
+}
+.not-read{
+    background-color: rgba(255, 145, 145, 0.7);
+    color: rgb(154, 3, 3);
+}
+.modal{
+    display: none;
+    position: fixed;
+    background-color: var(--light-color);
+    height: 500px;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px; /* Negative half of height*/
+    margin-left: -200px; /* Negative half of width*/
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    z-index: 10;
+}
+.overlay.show{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    z-index:5;
+    width:100%;
+    height:100%;
+    /* display:none; */
+    animation-duration: 0.25s;
+    animation-name: animate-fade;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+.modal.show{
+    display: block;
+    position: fixed;
+    background-color: var(--light-color);
+    height: 500px;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px; /* Negative half of height. */
+    margin-left: -200px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+
+    /* animations */
+    animation-duration: 0.25s;
+    animation-name: animate-fade;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+}
+@keyframes animate-fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+h2{
+    margin-bottom: 1rem;
+}
+.book-info{
+    margin-left: 40px;
+}
+.book-info p {
+    color: rgb(140, 140, 140);
+    font-style: italic;
+}
+.book-form{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+.book-input{
+    border-radius: 7px;
+    border: 0;
+    margin-bottom: 0.8rem;
+    height: 1rem;
+    padding: 10px;
+}
+.adding-btn{
+    margin-top: 2rem;
+    height: 2.2rem;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--dark-color);
+    color: #ffffff;
+    font-weight: 600;
+}
+.adding-btn:hover{
+    margin-top: 2rem;
+    height: 2.2rem;
+    border: none;
+    border-radius: 7px;
+    box-shadow: rgba(2, 45, 88, 0.2) 8px 8px 24px;
+}
